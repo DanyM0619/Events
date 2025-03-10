@@ -1,0 +1,25 @@
+
+<h1>Agregar Evento</h1>
+<form (ngSubmit)="onSubmit()" #eventForm="ngForm">
+    <div>
+      <label for="title">Título del Evento</label>
+      <input type="text" id="title" [(ngModel)]="event.title" name="title" required>
+    </div>
+  
+    <div>
+      <label for="description">Descripción</label>
+      <input type="text" id="description" [(ngModel)]="event.description" name="description" required>
+    </div>
+  
+    <div>
+      <label for="location">Ubicación</label>
+      <input type="text" id="location" [(ngModel)]="event.location" name="location" required>
+    </div>
+  
+    <div>
+      <label for="eventDate">Fecha del Evento</label>
+      <input type="date" id="eventDate" [(ngModel)]="event.eventDate" name="eventDate" required>
+    </div>
+  
+    <button type="submit" [disabled]="!eventForm.form.valid">Crear Evento</button>
+  </form>

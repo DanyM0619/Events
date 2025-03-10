@@ -1,0 +1,32 @@
+<div class="container">
+    <router-outlet></router-outlet> 
+    <nav>
+        <button (click)="navigateToForm()">Agregar evento</button>
+        <button>Ver Eventos</button>
+        <button>Editar evento</button>
+        <button>Eliminar evento</button>
+    </nav>
+
+    <h2 class="my-5">Mi Tabla</h2>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titulo</th>
+                <th>Fecha y hora</th>
+                <th>Descripcion</th>
+                <th>Ubicacion</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let event of events">
+                <td>{{event.id}}</td>
+                <td>{{event.title}}</td>
+                <td>{{event.dateTime}}</td>
+                <td>{{event.description}}</td>
+                <td>{{event.location}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
